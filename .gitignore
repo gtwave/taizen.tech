@@ -36,6 +36,11 @@ yarn-error.log*
 # vercel
 .vercel
 
+# local SQLite database and uploaded article cover images — runtime data,
+# not source
+/data/
+/public/uploads/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
