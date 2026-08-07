@@ -3,18 +3,21 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-export default function RevealLines({
-  lines,
-  as: Tag = "h1",
-  className = "",
-  delay = 0,
-}: {
+type RevealLinesProps = {
   lines: string[];
-  as?: keyof React.JSX.IntrinsicElements;
+  as?: string;
   className?: string;
   delay?: number;
-}) {
-  const ref = useRef<HTMLElement>(null);
+};
+
+export default function RevealLines({
+  lines,
+  as = "h1",
+  className = "",
+  delay = 0,
+}: RevealLinesProps) {
+  const Tag: any = as;
+  const ref = useRef<any>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -34,7 +37,7 @@ export default function RevealLines({
   }, []);
 
   return (
-    <Tag className={className} ref={ref}>
+    <Tag className={className} ref={ref as any}>
       {lines.map((line, i) => (
         <span className="line-mask" key={i}>
           <motion.span

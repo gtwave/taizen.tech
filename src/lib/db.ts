@@ -1,4 +1,4 @@
-import { DatabaseSync } from "node:sqlite";
+import Database from "better-sqlite3";
 import path from "node:path";
 import fs from "node:fs";
 
@@ -7,12 +7,12 @@ const DB_PATH = path.join(DATA_DIR, "taizen.db");
 
 declare global {
   // eslint-disable-next-line no-var
-  var __taizenDb: DatabaseSync | undefined;
+  var __taizenDb: any | undefined;
 }
 
-function createConnection(): DatabaseSync {
+function createConnection(): any {
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
-  const db = new DatabaseSync(DB_PATH);
+  const db = new Database(DB_PATH);
   db.exec("PRAGMA journal_mode = WAL;");
   db.exec(`
     CREATE TABLE IF NOT EXISTS admins (
@@ -47,7 +47,7 @@ function createConnection(): DatabaseSync {
 // Reuse a single connection across Next.js dev hot-reloads and route handler
 // invocations — node:sqlite locks the file, so opening a fresh connection per
 // request would exhaust handles and trip WAL contention.
-export function getDb(): DatabaseSync {
+export function getDb(): any {
   if (!global.__taizenDb) {
     global.__taizenDb = createConnection();
   }
