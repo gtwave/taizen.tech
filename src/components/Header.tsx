@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { useTheme } from "./ThemeProvider";
 import { useLanguage } from "./LanguageProvider";
 import LanguageSwitcher from "./LanguageSwitcher";
+import ContactModal from "./ContactModal";
 
 const EASE = "cubic-bezier(0.4,0,0.2,1)";
 const COLLAPSE_DURATION = "1.7s";
@@ -83,14 +84,10 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <Link
-              href="https://api.whatsapp.com/send?phone=5513997985262&text=Ol%C3%A1%21%20Quero%20agendar%20uma%20imers%C3%A3o%20t%C3%A9cnica%20com%20a%20Taizen."
-              target="_blank"
-              rel="noopener"
+            <ContactModal
+              label={t.nav.agendarImersao}
               className="btn btn-verde text-sm py-2! px-4! whitespace-nowrap"
-            >
-              {t.nav.agendarImersao}
-            </Link>
+            />
             <button
               onClick={toggle}
               aria-label="toggle the colour scheme"

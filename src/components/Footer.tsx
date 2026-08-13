@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { FormEvent, useState } from "react";
 import { useLanguage } from "./LanguageProvider";
 
 const MARQUEE_WORDS = [
@@ -34,6 +35,42 @@ const SOCIALS = [
 
 export default function Footer() {
   const { t } = useLanguage();
+  const [newsletterSent, setNewsletterSent] = useState(false);
+  const [newsletterError, setNewsletterError] = useState(false);
+  const [newsletterSending, setNewsletterSending] = useState(false);
+
+  async function subscribe(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setNewsletterSending(true);
+    setNewsletterError(false);
+    const form = new FormData(event.currentTarget);
+    const email = String(form.get("email") ?? "").trim();
+
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setNewsletterError(true);
+      setNewsletterSending(false);
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      if (response.ok) {
+        setNewsletterSent(true);
+        event.currentTarget.reset();
+      } else {
+        setNewsletterError(true);
+      }
+    } catch {
+      setNewsletterError(true);
+    } finally {
+      setNewsletterSending(false);
+    }
+  }
+
   return (
     <footer className="pt-24 pb-10">
       <div className="container">
@@ -82,20 +119,24 @@ export default function Footer() {
           </div>
 
           <form
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={subscribe}
             className="md:order-2 order-1 md:ml-auto max-w-md w-full"
           >
-            <p className="text-sm opacity-70 mb-3">{t.footer.newsletterLabel}</p>
+            <p className="text-sm opacity-70 mb-3">
+              {newsletterSent ? t.footer.newsletterSuccess : t.footer.newsletterLabel}
+            </p>
             <div className="flex gap-2">
               <input
+                name="email"
                 type="email"
                 placeholder={t.footer.emailPlaceholder}
                 className="flex-1 min-w-0 rounded-md border border-(--theme-secondary)/20 bg-transparent px-4 py-2 text-sm outline-none focus:border-(--brand-laranja)"
               />
-              <button type="submit" className="btn text-sm py-2! px-4!">
-                {t.footer.submitLabel}
+              <button type="submit" disabled={newsletterSending} className="btn text-sm py-2! px-4! disabled:opacity-60">
+                {newsletterSending ? t.footer.newsletterSending : t.footer.submitLabel}
               </button>
             </div>
+            {newsletterError && <p className="mt-2 text-xs text-red-500">{t.footer.newsletterError}</p>}
           </form>
         </div>
 
