@@ -11,7 +11,7 @@ export default function ServicosPage() {
 
   return (
     <>
-      <BannerPage tagline={banner.tagline} lines={banner.lines} text={banner.text} />
+      <BannerPage image="/images/taizen.jpg" tagline={banner.tagline} lines={banner.lines} text={banner.text} />
 
       <ContentBlock heading={blocks[0].heading} icon={blocks[0].icon} text={blocks[0].text} points={blocks[0].points} />
       <ContentBlock reverse heading={blocks[1].heading} icon={blocks[1].icon} text={blocks[1].text} points={blocks[1].points} />

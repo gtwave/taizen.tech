@@ -12,7 +12,7 @@ export default function PocPage() {
 
   return (
     <>
-      <BannerPage tagline={banner.tagline} lines={banner.lines} text={banner.text} />
+      <BannerPage image="/images/default-hero.jpg" tagline={banner.tagline} lines={banner.lines} text={banner.text} />
 
       <JourneySteps />
 
