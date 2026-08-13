@@ -48,8 +48,14 @@ export default function ContentBlock({
         </div>
         <RevealFade y={24} blur={8} scale={0.94}>
           <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-(--brand-laranja-light) flex items-center justify-center">
-            {image ? (
-              <Image src={image} alt={heading} fill className="object-cover" sizes="(max-width: 768px) 100vw, 40rem" />
+            {image || (typeof icon === "string" && icon.startsWith("/")) ? (
+              <Image
+                src={image ?? icon!}
+                alt={heading}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 40rem"
+              />
             ) : (
               <span className="text-7xl">{icon}</span>
             )}

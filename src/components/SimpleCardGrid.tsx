@@ -1,6 +1,7 @@
 import RevealFade from "./RevealFade";
 
 export type SimpleCard = {
+  // `icon` can be an emoji/text or an image path (public folder) starting with '/'
   icon: string;
   title: string;
   text: string;
@@ -51,36 +52,55 @@ export default function SimpleCardGrid({
         >
           {cards.map((c, i) => {
             const Wrapper = c.href ? "a" : "div";
+            const isImageHeader = typeof c.icon === "string" && c.icon.startsWith("/");
             return (
               <RevealFade key={c.title} delay={i * 0.08} y={20} blur={4} scale={0.97}>
                 <Wrapper
                   {...(c.href ? { href: c.href } : {})}
-                  className="block h-full rounded-xl p-7"
+                  className="block h-full rounded-xl overflow-hidden border shadow-[0_24px_80px_rgba(15,23,42,0.04)]"
                   style={{
-                    background: dark
-                      ? "rgba(255,255,255,0.04)"
-                      : "var(--theme-primary)",
-                    border: dark
-                      ? "1px solid rgba(255,255,255,0.08)"
-                      : "1px solid var(--theme-secondary)15",
+                    borderColor: "var(--card-border)",
+                    backgroundColor: isImageHeader ? "transparent" : "var(--card-bg)",
+                    color: "var(--card-text)",
                   }}
                 >
-                  <div
-                    className="w-12 h-12 rounded-lg flex items-center justify-center text-2xl mb-5"
-                    style={{ backgroundColor: `${c.color ?? "#ffb800"}28` }}
-                  >
-                    {c.icon}
-                  </div>
-                  <h3 className="font-bold text-lg mb-2">{c.title}</h3>
-                  <p className="text-sm opacity-70 leading-relaxed">{c.text}</p>
-                  {c.extra && (
-                    <p
-                      className="text-sm font-bold mt-4"
-                      style={{ color: "var(--brand-verde)" }}
-                    >
-                      {c.extra}
-                    </p>
+                  {isImageHeader && (
+                    <div
+                      className="h-48 bg-cover bg-center"
+                      style={{ backgroundImage: `url(${c.icon})` }}
+                    />
                   )}
+                  <div
+                    className={`relative ${isImageHeader ? "-mt-10 backdrop-blur-sm rounded-3xl px-7 pb-7 pt-6" : "p-7"}`}
+                    style={{
+                      backgroundColor: isImageHeader ? "var(--card-panel-bg)" : "transparent",
+                      color: "var(--card-panel-text)",
+                      border: isImageHeader ? "1px solid var(--card-panel-border)" : undefined,
+                    }}
+                  >
+                    {!isImageHeader && (
+                      <div
+                        className="w-12 h-12 rounded-lg flex items-center justify-center text-2xl mb-5 overflow-hidden"
+                        style={{ backgroundColor: `${c.color ?? "#ffb800"}28` }}
+                      >
+                        {c.icon}
+                      </div>
+                    )}
+                    <div className={isImageHeader ? "w-full" : ""}>
+                      <h3 className="font-bold text-lg mb-2">{c.title}</h3>
+                      <p className={`text-sm leading-relaxed ${isImageHeader ? "opacity-90" : "opacity-70"}`}>
+                        {c.text}
+                      </p>
+                      {c.extra && (
+                        <p
+                          className="text-sm font-bold mt-4"
+                          style={{ color: isImageHeader ? "#111" : "var(--brand-verde)" }}
+                        >
+                          {c.extra}
+                        </p>
+                      )}
+                    </div>
+                  </div>
                 </Wrapper>
               </RevealFade>
             );

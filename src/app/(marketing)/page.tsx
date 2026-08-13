@@ -2,7 +2,6 @@
 
 import Hero from "@/components/Hero";
 import SimpleCardGrid from "@/components/SimpleCardGrid";
-import CardsCarousel from "@/components/CardsCarousel";
 import ComparisonTable from "@/components/ComparisonTable";
 import Cta from "@/components/Cta";
 import { useLanguage } from "@/components/LanguageProvider";
@@ -21,10 +20,16 @@ export default function Home() {
         cards={t.home.desafios.cards.map((c, i) => ({ ...c, color: ["#ffb800", "#7c3aed"][i] }))}
       />
 
-      <CardsCarousel
+      <SimpleCardGrid
         tagline={t.home.portfolio.tagline}
         heading={t.home.portfolio.heading}
-        cards={t.home.portfolio.cards.map((c, i) => ({ ...c, color: ["#ffb800", "#7ed321", "#ffb800", "#7c3aed"][i] }))}
+        text=""
+        cards={t.home.portfolio.cards.map((c, i) => ({
+          icon: c.icon,
+          title: c.title,
+          text: c.description,
+          color: ["#ffb800", "#7ed321", "#ffb800", "#7c3aed"][i],
+        }))}
       />
 
       <SimpleCardGrid
