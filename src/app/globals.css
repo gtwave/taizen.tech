@@ -15,22 +15,45 @@
   --theme-primary: var(--white);
   --theme-primary-faded: rgba(255, 255, 255, 0.7);
   --theme-secondary: var(--preto);
-  /* Light theme: no black in the blobs (a solid --preto blob against a white
-     page read as a dark stain, not a gradient) — two soft tints of roxo
-     instead, at lower opacity, for a gentle wash rather than a smudge. */
-  --gradient-1: var(--brand-roxo-soft);
-  --gradient-2: var(--brand-roxo);
-  --gradient-3: var(--brand-roxo-soft);
-  --gradient-4: var(--brand-roxo);
-  --blob-opacity-1: 0.32;
-  --blob-opacity-2: 0.36;
-  --blob-opacity-3: 0.22;
+  --hero-overlay: rgba(0, 0, 0, 0.46);
+  --hero-overlay-image: rgba(255, 255, 255, 0.08);
+  --hero-text: #ffffff;
+  --hero-subtext: rgba(255, 255, 255, 0.92);
+  --card-bg: #ffffff;
+  --card-text: #0f172a;
+  --card-border: rgba(15, 23, 42, 0.08);
+  --card-panel-bg: rgba(255, 255, 255, 0.92);
+  --card-panel-text: #0f172a;
+  --card-panel-border: rgba(15, 23, 42, 0.08);
+  --btn-secondary-bg: rgba(255, 255, 255, 0.12);
+  --btn-secondary-text: #ffffff;
+    /* Light theme: soft ciano and laranja washes keep the white page bright
+      while adding movement without overpowering the content. */
+    --gradient-1: color-mix(in srgb, var(--brand-azul) 38%, white);
+    --gradient-2: color-mix(in srgb, var(--brand-laranja) 52%, white);
+    --gradient-3: color-mix(in srgb, var(--brand-azul) 28%, white);
+    --gradient-4: color-mix(in srgb, var(--brand-laranja) 44%, white);
+    --blob-opacity-1: 0.42;
+    --blob-opacity-2: 0.46;
+    --blob-opacity-3: 0.3;
 }
 
 :root[data-theme="dark"] {
   --theme-primary: var(--preto);
   --theme-primary-faded: rgba(13, 0, 18, 0.75);
   --theme-secondary: var(--white);
+  --hero-overlay: rgba(0, 0, 0, 0.28);
+  --hero-overlay-image: rgba(255, 255, 255, 0.14);
+  --hero-text: #ffffff;
+  --hero-subtext: rgba(255, 255, 255, 0.92);
+  --card-bg: rgba(255, 255, 255, 0.04);
+  --card-text: #f8fafc;
+  --card-border: rgba(255, 255, 255, 0.14);
+  --card-panel-bg: rgba(15, 23, 42, 0.88);
+  --card-panel-text: #f8fafc;
+  --card-panel-border: rgba(255, 255, 255, 0.08);
+  --btn-secondary-bg: rgba(255, 255, 255, 0.12);
+  --btn-secondary-text: #ffffff;
   --gradient-1: var(--brand-roxo);
   --gradient-2: var(--preto);
   --gradient-3: var(--brand-roxo);
@@ -161,6 +184,29 @@ body {
   opacity: var(--blob-opacity-3);
   transform: translate(-50%, -50%);
   animation: blob-drift-3 15s ease-in-out infinite;
+}
+
+/* Keep the light theme accents in separate visual zones instead of allowing
+   large overlapping blobs to blend cyan and orange into a third hue. */
+:root:not([data-theme="dark"]) .gradient-bg__blob--1 {
+  top: 10%;
+  left: 14%;
+  width: 68vw;
+  height: 68vw;
+}
+
+:root:not([data-theme="dark"]) .gradient-bg__blob--2 {
+  top: 8%;
+  left: 86%;
+  width: 64vw;
+  height: 64vw;
+}
+
+:root:not([data-theme="dark"]) .gradient-bg__blob--3 {
+  top: 82%;
+  left: 48%;
+  width: 58vw;
+  height: 58vw;
 }
 
 @keyframes blob-drift-1 {
