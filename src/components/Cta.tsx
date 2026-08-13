@@ -2,6 +2,7 @@
 
 import RevealFade from "./RevealFade";
 import { useLanguage } from "./LanguageProvider";
+import ContactModal from "./ContactModal";
 
 export default function Cta({
   heading,
@@ -31,15 +32,11 @@ export default function Cta({
               {finalHeading}
             </h2>
             <p className="opacity-85 max-w-lg mx-auto mb-8">{finalText}</p>
-            <a
-              href={ctaHref}
-              target={ctaHref.startsWith("http") ? "_blank" : undefined}
-              rel={ctaHref.startsWith("http") ? "noopener noreferrer" : undefined}
+            <ContactModal
+              label={finalCtaLabel}
               className="btn"
               style={{ background: "#fff", color: "var(--brand-roxo)" }}
-            >
-              {finalCtaLabel}
-            </a>
+            />
           </div>
         </RevealFade>
       </div>
