@@ -24,6 +24,38 @@ const es: Dictionary = {
     ],
   },
 
+  contactForm: {
+    title: "Habla con Taizen",
+    subtitle: "Déjanos tus datos y cuéntanos cómo nuestro equipo senior puede ayudar a tu empresa.",
+    name: "Nombre",
+    email: "Correo corporativo",
+    phone: "Teléfono/WhatsApp",
+    company: "Empresa/Entidad",
+    preferredContact: "Prefiero contacto por",
+    videoCall: "Videoconferencia",
+    emailOption: "Correo electrónico",
+    phoneOption: "Teléfono",
+    whatsapp: "WhatsApp",
+    noPreference: "Sin preferencia",
+    contactReason: "Motivo del contacto",
+    reasons: [
+      "Diagnóstico de ingeniería y arquitectura",
+      "POC para validar una solución",
+      "Cloud, DevOps e infraestructura",
+      "Integraciones de IA",
+      "Outsourcing o squad senior",
+      "Soporte y evolución de sistemas",
+      "Otro asunto",
+    ],
+    description: "Describe la necesidad que motivó tu contacto",
+    submit: "Enviar contacto",
+    sending: "Enviando...",
+    successTitle: "Contacto enviado con éxito",
+    successText: "Un miembro de nuestro equipo se pondrá en contacto contigo pronto.",
+    error: "No fue posible enviar ahora. Inténtalo de nuevo.",
+    close: "Cerrar",
+  },
+
   home: {
     desafios: {
       tagline: "Desafíos actuales del mercado",
@@ -31,12 +63,12 @@ const es: Dictionary = {
       text: "Eso es lo que resolvemos antes que nada — antes de proponer squads, cloud o IA.",
       cards: [
         {
-          icon: "⏳",
+          icon: "/images/obstaculos.jpg",
           title: "Cuellos de botella en desarrollo",
           text: "Escasez de talento senior, curvas de aprendizaje largas pagadas por el cliente y retrasos constantes en la entrega de funcionalidades críticas para el negocio.",
         },
         {
-          icon: "⚠️",
+          icon: "/images/monolito.png",
           title: "Sistemas rígidos y riesgos",
           text: "Falta de automatización en CI/CD, arquitecturas heredadas difíciles de migrar a la nube e incertidumbre sobre cómo aplicar Inteligencia Artificial de forma práctica.",
         },
@@ -47,22 +79,22 @@ const es: Dictionary = {
       heading: "Elige tu frente.",
       cards: [
         {
-          icon: "🧑‍💻",
+          icon: "/images/default-hero.jpg",
           title: "Outsourcing & Scrum",
           description: "Asignación estratégica de desarrolladores senior y gestión ágil de equipos de alto rendimiento enfocada en un flujo constante de entregas.",
         },
         {
-          icon: "☁️",
+          icon: "/images/default-hero.jpg",
           title: "Cloud & DevOps",
           description: "Migración segura a infraestructura cloud, automatización de CI/CD, resiliencia e implementación de infraestructura como código.",
         },
         {
-          icon: "🤖",
+          icon: "/images/default-hero.jpg",
           title: "Integraciones de IA",
           description: "Incorporación de Inteligencia Artificial generativa y predictiva en flujos de trabajo y sistemas de software existentes.",
         },
         {
-          icon: "🛠️",
+          icon: "/images/default-hero.jpg",
           title: "Soporte 24/7",
           description: "Mantenimiento preventivo, soporte continuo a aplicaciones críticas y corrección ágil de errores sin interrumpir el negocio.",
         },
@@ -74,17 +106,17 @@ const es: Dictionary = {
       text: "A diferencia de las grandes consultoras que envían becarios y juniors a operar tu proyecto, en Taizen todos los proyectos cuentan con participación directa y supervisión de líderes con más de 20 años de mercado.",
       cards: [
         {
-          icon: "🏆",
+          icon: "/images/default-hero.jpg",
           title: "Años de experiencia técnica",
           text: "Consultora fundada por ingenieros y directores con más de dos décadas liderando la creación de arquitecturas complejas para grandes empresas.",
         },
         {
-          icon: "🎯",
+          icon: "/images/default-hero.jpg",
           title: "Cero laboratorio de juniors",
           text: "Garantizamos que tu proyecto no sea un laboratorio para profesionales junior. Madurez ejecutiva con atención directa de los fundadores.",
         },
         {
-          icon: "⚡",
+          icon: "/images/default-hero.jpg",
           title: "Precisión desde el primer sprint",
           text: "Cada decisión de arquitectura, pipeline o código se ejecuta con precisión quirúrgica desde el primer día — sin curva de aprendizaje pagada por el cliente.",
         },
@@ -96,13 +128,13 @@ const es: Dictionary = {
       text: "De consultoría física a una plataforma digital escalable — dos casos donde liderar la arquitectura desde cero marcó la diferencia.",
       cards: [
         {
-          icon: "💳",
+          icon: "/images/default-hero.jpg",
           title: "WEXP — Fintech · Spin-off · SaaS",
           text: "Plataforma digital de optimización de gastos corporativos, construida desde cero como spin-off de Willy Consultoria — del Design Sprint a la arquitectura de software completa.",
           extra: "R$5 mill+ en transacciones procesadas",
         },
         {
-          icon: "🏥",
+          icon: "/images/default-hero.jpg",
           title: "ISA — Healthtech",
           text: "Atención de salud móvil y domiciliaria descentralizada — logística de profesionales, pacientes y exámenes orquestada con Web & Mobile, Cloud y Data & IA.",
           extra: "Infraestructura escalable en tiempo real",
@@ -163,6 +195,9 @@ const es: Dictionary = {
     newsletterLabel: "Recibe contenido técnico y novedades",
     emailPlaceholder: "Tu correo...",
     submitLabel: "Enviar",
+    newsletterSuccess: "Correo registrado con éxito.",
+    newsletterSending: "Enviando...",
+    newsletterError: "No fue posible registrar el correo ahora.",
     copyright: "Taizen Consulting — Ingeniería de Software e Innovación Digital Senior.",
   },
 
@@ -175,7 +210,7 @@ const es: Dictionary = {
     blocks: [
       {
         heading: "Outsourcing & Squads Ágiles",
-        icon: "🧑‍💻",
+        icon: "/images/kanban.png",
         text: "Asignación estratégica de desarrolladores senior y gestión ágil de equipos de alto rendimiento enfocada en un flujo constante — sin curva de aprendizaje pagada por el cliente.",
         points: [
           "Devs 100% senior — squads a medida para tu roadmap",
@@ -186,7 +221,7 @@ const es: Dictionary = {
       },
       {
         heading: "Cloud, DevOps & CI/CD",
-        icon: "☁️",
+        icon: "/images/cloud.jpg",
         text: "Migración segura a infraestructura cloud, automatización de CI/CD, resiliencia e implementación de infraestructura como código — lanzamientos más frecuentes y seguros.",
         points: [
           "Migración a la nube (AWS, Azure, GCP) sin downtime",
@@ -197,7 +232,7 @@ const es: Dictionary = {
       },
       {
         heading: "Integraciones de IA",
-        icon: "🧠",
+        icon: "/images/ia.jpg",
         text: "Incorporación de Inteligencia Artificial generativa y predictiva en flujos de trabajo y sistemas de software existentes — del prompt engineering al despliegue en producción.",
         points: [
           "LLMs integrados en flujos reales de atención y análisis",
@@ -208,7 +243,7 @@ const es: Dictionary = {
       },
       {
         heading: "Soporte 24/7",
-        icon: "🛠️",
+        icon: "/images/suporte.png",
         text: "Mantenimiento preventivo, soporte continuo a aplicaciones críticas y corrección ágil de errores sin interrumpir el negocio — con IA integrada de forma práctica, no experimental.",
         points: [
           "Soporte continuo de sistemas heredados y producción",

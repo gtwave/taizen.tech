@@ -22,19 +22,51 @@ const pt = {
     ],
   },
 
+  contactForm: {
+    title: "Fale com a Taizen",
+    subtitle: "Deixe seus dados e conte como podemos ajudar sua empresa a avançar com engenharia sênior.",
+    name: "Nome",
+    email: "E-mail corporativo",
+    phone: "Telefone/WhatsApp",
+    company: "Empresa/Entidade",
+    preferredContact: "Prefiro contato por",
+    videoCall: "Videoconferência",
+    emailOption: "E-mail",
+    phoneOption: "Telefone",
+    whatsapp: "WhatsApp",
+    noPreference: "Sem preferência",
+    contactReason: "Motivo do contato",
+    reasons: [
+      "Diagnóstico de engenharia e arquitetura",
+      "POC para validar uma solução",
+      "Cloud, DevOps e infraestrutura",
+      "Integrações de IA",
+      "Outsourcing ou squad sênior",
+      "Sustentação e evolução de sistemas",
+      "Outro assunto",
+    ],
+    description: "Descreva a demanda que motivou seu contato",
+    submit: "Enviar contato",
+    sending: "Enviando...",
+    successTitle: "Contato enviado com sucesso",
+    successText: "Um membro da nossa equipe entrará em contato em breve.",
+    error: "Não foi possível enviar agora. Tente novamente.",
+    close: "Fechar",
+  },
+
   home: {
     desafios: {
       tagline: "Desafios atuais do mercado",
-      heading: "Os gargalos que travam o seu roadmap.",
+      heading: "Bloqueios invisíveis que atrasam as suas entregas.",
       text: "É isso que resolvemos antes de qualquer coisa — antes de propor squads, cloud ou IA.",
       cards: [
         {
-          icon: "⏳",
-          title: "Gargalos em Desenvolvimento",
+          icon: "/images/obstaculos.jpg",
+          title: "Obstaculos em Desenvolvimento",
           text: "Escassez de talentos sêniores, curvas de aprendizado longas pagas pelo cliente e atrasos constantes na entrega de novos recursos críticos para o negócio.",
         },
         {
-          icon: "⚠️",
+          icon: "/images/monolito.png",
           title: "Sistemas Engessados & Riscos",
           text: "Falta de automação em CI/CD, arquiteturas legadas difíceis de migrar para a nuvem e incertezas sobre como aplicar Inteligência Artificial de forma prática.",
         },
@@ -45,22 +77,22 @@ const pt = {
       heading: "Escolha sua frente.",
       cards: [
         {
-          icon: "🧑‍💻",
+          icon: "/images/kanban.png",
           title: "Outsourcing & Scrum",
           description: "Alocação estratégica de desenvolvedores sêniores e gestão ágil de times de alta performance focada em vazão constante.",
         },
         {
-          icon: "☁️",
+          icon: "/images/cloud.jpg",
           title: "Cloud & DevOps",
           description: "Migração segura para infraestrutura cloud, automação de CI/CD, resiliência e implementação de infraestrutura como código.",
         },
         {
-          icon: "🤖",
+          icon: "/images/ia.jpg",
           title: "Integrações de IA",
           description: "Incorporação de Inteligência Artificial generativa e preditiva em fluxos de trabalho e sistemas de software existentes.",
         },
         {
-          icon: "🛠️",
+          icon: "/images/suporte.png",
           title: "Sustentação 24/7",
           description: "Manutenção preventiva, suporte continuado a aplicações críticas e correção ágil de bugs sem interromper o negócio.",
         },
@@ -68,21 +100,21 @@ const pt = {
     },
     diferencial: {
       tagline: "Diferencial competitivo",
-      heading: "Mitigação total de risco tecnológico.",
-      text: "Diferente das grandes consultorias que enviam estagiários e juniores para a sua operação, na Taizen todos os projetos têm participação direta e supervisão de líderes com mais de 20 anos de mercado.",
+      heading: "Antecipar e Reduzir o risco tecnológico.",
+      text: "Diferente das consultorias que enviam estagiários e juniores para a sua operação, na Taizen todos os projetos têm participação direta e supervisão de líderes com mais de 20 anos de mercado. Nosso objetivo é reduzir o risco tecnológico do seu projeto, antecipando problemas e propondo soluções de forma prática e objetiva. O cuidado com a arquitetura, a infraestrutura e a integração de IA é o que garante que o seu roadmap seja entregue no prazo e com qualidade.",
       cards: [
         {
-          icon: "🏆",
+          icon: "/images/default-hero.jpg",
           title: "Anos de bagagem técnica",
           text: "Consultoria fundada pela união de engenheiros e diretores com mais de duas décadas de liderança na criação de arquiteturas complexas para grandes players.",
         },
         {
-          icon: "🎯",
+          icon: "/images/meet.png",
           title: "Zero laboratório de juniores",
           text: "Garantimos que o seu projeto não seja laboratório para profissionais juniores. Maturidade executiva com atendimento direto dos fundadores.",
         },
         {
-          icon: "⚡",
+          icon: "/images/preciso.png",
           title: "Precisão desde a primeira sprint",
           text: "Cada decisão de arquitetura, pipeline ou código é executada com precisão cirúrgica desde o primeiro dia — sem curva de aprendizado paga pelo cliente.",
         },
@@ -94,13 +126,13 @@ const pt = {
       text: "De consultoria física a plataforma digital escalável — dois cases onde liderar a arquitetura do zero fez a diferença.",
       cards: [
         {
-          icon: "💳",
+          icon: "/images/wexp.jpg",
           title: "WEXP — Fintech · Spin-off · SaaS",
           text: "Plataforma digital de otimização de despesas corporativas, construída do zero como spin-off da Willy Consultoria — do Design Sprint à arquitetura completa de software.",
           extra: "R$ 5 mi+ em transações processadas",
         },
         {
-          icon: "🏥",
+          icon: "/images/isa.jpg",
           title: "ISA — Healthtech",
           text: "Atendimento de saúde móvel e domiciliar descentralizado — logística de profissionais, pacientes e exames orquestrada com Web & Mobile, Cloud e Data & IA.",
           extra: "Infraestrutura escalável em tempo real",
@@ -161,6 +193,9 @@ const pt = {
     newsletterLabel: "Receba conteúdo técnico e novidades",
     emailPlaceholder: "Seu e-mail...",
     submitLabel: "Enviar",
+    newsletterSuccess: "E-mail cadastrado com sucesso.",
+    newsletterSending: "Enviando...",
+    newsletterError: "Não foi possível cadastrar o e-mail agora.",
     copyright: "Taizen Consulting — Engenharia de Software & Inovação Digital Sênior.",
   },
 
@@ -173,7 +208,7 @@ const pt = {
     blocks: [
       {
         heading: "Outsourcing & Squads Ágeis",
-        icon: "🧑‍💻",
+        icon: "/images/kanban.png",
         text: "Alocação estratégica de desenvolvedores sêniores e gestão ágil de times de alta performance focada em vazão constante — sem curva de aprendizado paga pelo cliente.",
         points: [
           "Devs 100% sêniores — squads sob medida para o seu roadmap",
@@ -184,7 +219,7 @@ const pt = {
       },
       {
         heading: "Cloud, DevOps & CI/CD",
-        icon: "☁️",
+        icon: "/images/cloud.jpg",
         text: "Migração segura para infraestrutura cloud, automação de CI/CD, resiliência e implementação de infraestrutura como código — lançamentos mais frequentes e seguros.",
         points: [
           "Migração para Cloud (AWS, Azure, GCP) sem downtime",
@@ -195,7 +230,7 @@ const pt = {
       },
       {
         heading: "Integrações de IA",
-        icon: "🧠",
+        icon: "/images/ia.jpg",
         text: "Incorporação de Inteligência Artificial generativa e preditiva em fluxos de trabalho e sistemas de software existentes — do prompt engineering ao deploy em produção.",
         points: [
           "LLMs integrados a fluxos reais de atendimento e análise",
@@ -206,7 +241,7 @@ const pt = {
       },
       {
         heading: "Sustentação 24/7",
-        icon: "🛠️",
+        icon: "/images/suporte.png",
         text: "Manutenção preventiva, suporte continuado a aplicações críticas e correção ágil de bugs sem interromper o negócio — com IA integrada de forma prática, não experimental.",
         points: [
           "Sustentação contínua de sistemas legados e produção",

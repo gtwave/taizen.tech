@@ -24,6 +24,38 @@ const en: Dictionary = {
     ],
   },
 
+  contactForm: {
+    title: "Talk to Taizen",
+    subtitle: "Leave your details and tell us how our senior engineering team can help your business move forward.",
+    name: "Name",
+    email: "Corporate email",
+    phone: "Phone/WhatsApp",
+    company: "Company/Entity",
+    preferredContact: "Preferred contact method",
+    videoCall: "Video call",
+    emailOption: "Email",
+    phoneOption: "Phone",
+    whatsapp: "WhatsApp",
+    noPreference: "No preference",
+    contactReason: "Reason for contact",
+    reasons: [
+      "Engineering and architecture diagnosis",
+      "POC to validate a solution",
+      "Cloud, DevOps and infrastructure",
+      "AI integrations",
+      "Outsourcing or senior squad",
+      "System support and evolution",
+      "Other subject",
+    ],
+    description: "Describe what prompted your contact",
+    submit: "Send contact",
+    sending: "Sending...",
+    successTitle: "Contact sent successfully",
+    successText: "A member of our team will contact you shortly.",
+    error: "We could not send it now. Please try again.",
+    close: "Close",
+  },
+
   home: {
     desafios: {
       tagline: "Current market challenges",
@@ -31,12 +63,12 @@ const en: Dictionary = {
       text: "That's what we solve first — before proposing squads, cloud or AI.",
       cards: [
         {
-          icon: "⏳",
+          icon: "/images/obstaculos.jpg",
           title: "Development Bottlenecks",
           text: "Scarcity of senior talent, long learning curves paid for by the client, and constant delays delivering critical new features for the business.",
         },
         {
-          icon: "⚠️",
+          icon: "/images/monolito.png",
           title: "Rigid Systems & Risk",
           text: "Lack of CI/CD automation, legacy architectures that are hard to migrate to the cloud, and uncertainty about applying Artificial Intelligence in practice.",
         },
@@ -47,22 +79,22 @@ const en: Dictionary = {
       heading: "Pick your track.",
       cards: [
         {
-          icon: "🧑‍💻",
+          icon: "/images/default-hero.jpg",
           title: "Outsourcing & Scrum",
           description: "Strategic allocation of senior developers and agile management of high-performance teams focused on steady throughput.",
         },
         {
-          icon: "☁️",
+          icon: "/images/default-hero.jpg",
           title: "Cloud & DevOps",
           description: "Safe migration to cloud infrastructure, CI/CD automation, resilience and infrastructure-as-code implementation.",
         },
         {
-          icon: "🤖",
+          icon: "/images/default-hero.jpg",
           title: "AI Integrations",
           description: "Incorporating generative and predictive Artificial Intelligence into existing workflows and software systems.",
         },
         {
-          icon: "🛠️",
+          icon: "/images/default-hero.jpg",
           title: "24/7 Support",
           description: "Preventive maintenance, ongoing support for critical applications and rapid bug fixes without interrupting the business.",
         },
@@ -74,17 +106,17 @@ const en: Dictionary = {
       text: "Unlike large consultancies that send interns and juniors to run your operation, at Taizen every project has the direct participation and oversight of leaders with 20+ years of market experience.",
       cards: [
         {
-          icon: "🏆",
+          icon: "/images/default-hero.jpg",
           title: "Years of technical experience",
           text: "A consultancy founded by engineers and directors with over two decades of leadership building complex architectures for major players.",
         },
         {
-          icon: "🎯",
+          icon: "/images/default-hero.jpg",
           title: "Zero junior training ground",
           text: "We guarantee your project won't be a training ground for junior professionals. Executive maturity with direct attention from the founders.",
         },
         {
-          icon: "⚡",
+          icon: "/images/default-hero.jpg",
           title: "Precision from sprint one",
           text: "Every architecture, pipeline or code decision is executed with surgical precision from day one — no learning curve paid for by the client.",
         },
@@ -96,13 +128,13 @@ const en: Dictionary = {
       text: "From physical consulting to a scalable digital platform — two cases where leading the architecture from scratch made the difference.",
       cards: [
         {
-          icon: "💳",
+          icon: "/images/default-hero.jpg",
           title: "WEXP — Fintech · Spin-off · SaaS",
           text: "A digital platform for corporate expense optimization, built from scratch as a spin-off of Willy Consultoria — from Design Sprint to full software architecture.",
           extra: "R$5M+ in transactions processed",
         },
         {
-          icon: "🏥",
+          icon: "/images/default-hero.jpg",
           title: "ISA — Healthtech",
           text: "Decentralized mobile and home healthcare — logistics for professionals, patients and exams orchestrated with Web & Mobile, Cloud and Data & AI.",
           extra: "Real-time scalable infrastructure",
@@ -163,6 +195,9 @@ const en: Dictionary = {
     newsletterLabel: "Get technical content and updates",
     emailPlaceholder: "Your email...",
     submitLabel: "Send",
+    newsletterSuccess: "Email registered successfully.",
+    newsletterSending: "Sending...",
+    newsletterError: "The email could not be registered right now.",
     copyright: "Taizen Consulting — Senior Software Engineering & Digital Innovation.",
   },
 
@@ -175,7 +210,7 @@ const en: Dictionary = {
     blocks: [
       {
         heading: "Outsourcing & Agile Squads",
-        icon: "🧑‍💻",
+        icon: "/images/kanban.png",
         text: "Strategic allocation of senior developers and agile management of high-performance teams focused on steady throughput — no learning curve paid for by the client.",
         points: [
           "100% senior devs — squads tailored to your roadmap",
@@ -186,7 +221,7 @@ const en: Dictionary = {
       },
       {
         heading: "Cloud, DevOps & CI/CD",
-        icon: "☁️",
+        icon: "/images/cloud.jpg",
         text: "Safe migration to cloud infrastructure, CI/CD automation, resilience and infrastructure-as-code implementation — more frequent, safer releases.",
         points: [
           "Cloud migration (AWS, Azure, GCP) with zero downtime",
@@ -197,7 +232,7 @@ const en: Dictionary = {
       },
       {
         heading: "AI Integrations",
-        icon: "🧠",
+        icon: "/images/ia.jpg",
         text: "Incorporating generative and predictive Artificial Intelligence into existing workflows and software systems — from prompt engineering to production deployment.",
         points: [
           "LLMs integrated into real support and analysis workflows",
@@ -208,7 +243,7 @@ const en: Dictionary = {
       },
       {
         heading: "24/7 Support",
-        icon: "🛠️",
+        icon: "/images/suporte.png",
         text: "Preventive maintenance, ongoing support for critical applications and rapid bug fixes without interrupting the business — with AI applied practically, not experimentally.",
         points: [
           "Continuous support for legacy and production systems",
