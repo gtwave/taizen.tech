@@ -40,6 +40,34 @@ function createConnection(): any {
       updated_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
   `);
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS contactsite (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      nome TEXT,
+      email TEXT,
+      telefone TEXT,
+      empresa TEXT,
+      cnpj TEXT,
+      cargo TEXT,
+      preferencia_contato TEXT,
+      motivo_contato TEXT,
+      descricao TEXT,
+      created_at TEXT NOT NULL DEFAULT (datetime('now'))
+    );
+  `);
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS newsletter (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      email TEXT,
+      created_at TEXT NOT NULL DEFAULT (datetime('now'))
+    );
+  `);
+  const contactColumns = db.prepare("PRAGMA table_info(contactsite)").all() as { name: string }[];
+  for (const column of ["empresa", "cnpj", "cargo", "preferencia_contato", "motivo_contato"]) {
+    if (!contactColumns.some((item) => item.name === column)) {
+      db.exec(`ALTER TABLE contactsite ADD COLUMN ${column} TEXT`);
+    }
+  }
   db.exec(`CREATE INDEX IF NOT EXISTS idx_articles_status ON articles(status, published_at DESC);`);
   return db;
 }
