@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { motion } from "framer-motion";
 
 type RevealLinesProps = {
@@ -8,6 +8,7 @@ type RevealLinesProps = {
   as?: string;
   className?: string;
   delay?: number;
+  style?: CSSProperties;
 };
 
 export default function RevealLines({
@@ -15,6 +16,7 @@ export default function RevealLines({
   as = "h1",
   className = "",
   delay = 0,
+  style,
 }: RevealLinesProps) {
   const Tag: any = as;
   const ref = useRef<any>(null);
@@ -37,7 +39,7 @@ export default function RevealLines({
   }, []);
 
   return (
-    <Tag className={className} ref={ref as any}>
+    <Tag className={className} style={style} ref={ref as any}>
       {lines.map((line, i) => (
         <span className="line-mask" key={i}>
           <motion.span
