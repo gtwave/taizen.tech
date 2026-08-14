@@ -30,4 +30,4 @@ COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
 
 EXPOSE 80
-CMD ["sh", "-c", "next start -H 0.0.0.0 -p ${PORT}"]
+CMD ["sh", "-c", "./node_modules/.bin/next start -H 0.0.0.0 -p ${PORT}"]
